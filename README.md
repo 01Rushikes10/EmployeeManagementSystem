@@ -1,2 +1,2 @@
 # EmployeeManagementSystem
-Employee Management System using Java, JDBC and MySQL
+Employee Management System using core Java, JDBC and MySQL
