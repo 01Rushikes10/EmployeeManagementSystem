@@ -32,13 +32,12 @@ public class EmployeeManagementSystem {
 			System.out.println("\nEmployee Management System:");
 			System.out.println("1. Select all records");
 			System.out.println("2. Update all records");
-			System.out.println("3. Delete all records where (salary >= enter_Salary)");
+			System.out.println("3. Add an employee record");
 			System.out.println("4. Sort records in ascending order (by salary)");
-			System.out.println("5. Sort records in descending order (by salary)");
-			System.out.println("6. Add an employee record");
-			System.out.println("7. Select a specific record by ID");
-			System.out.println("8. Delete a specific record by ID");
-			System.out.println("9. Exit");
+			System.out.println("5. Sort records in descending order (by salary)");			
+			System.out.println("6. Select a specific record by ID");
+			System.out.println("7. Delete a specific record by ID");
+			System.out.println("8. Exit");
 			System.out.print("Enter your choice: ");
 
 			Scanner scanner = new Scanner(System.in);
@@ -51,34 +50,30 @@ public class EmployeeManagementSystem {
 			case 2:
 				updateAllRecords(connection);
 				break;
-			case 3:
-				System.out.println("Please enter the salary. We want to delete records above that salary.");
-				int sal = scanner.nextInt();
-				deleteRecordsWithSalary(connection, sal);
-				break;
+			
 			case 4:
 				sortRecordsBySalary(connection);
 				break;
 			case 5:
 				sortRecordsBySalaryDes(connection);
 				break;
-			case 6:
+			case 3:
 				addEmployeeRecord(connection);
 				break;
-			case 7:
+			case 6:
 				selectRecordById(connection);
 				break;
-			case 8:
+			case 7:
 				deleteRecordById(connection);
 				break;
-			case 9:
+			case 8:
 				System.out.println("Exiting...");
 				break;
 			default:
 				System.out.println("Invalid choice! Please try again.");
 				break;
 			}
-		} while (choice != 9);
+		} while (choice != 8);
 	}
 
 	private static void deleteRecordById(Connection connection) throws SQLException {
